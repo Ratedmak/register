@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/styles/main.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="indexcontain">
+    <% if(locals.error){ %>
+        <h1> <%= error %> </h1>
+   <%   } %>
+   <h1>Register</h1>
+
+<form action="/register" method="post" id="myform">
+    <label for="username" >Name</label>
+    <input type="text" id="username" name="name" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <label for="repassword">Enter Password Again</label>
+    <input type="password" id="repassword" name="repassword" required>
+    <button id="submit" name="submit" type="submit">Submit</button>
+</form>
+<a href="/login"><span>Already have an account? </span>Sign in</a>
+</div>
+<script>
+    function validate(){
+        var x= document.getElementsByName("password")[0].value;
+        var y = document.getElementsByName("repassword")[0].value;
+        console.log(x,y);
+        if(x == y){
+            return true
+        }else{
+            alert("enter correct password");
+            event.preventDefault();
+             return false;
+        }
+        
+        
+   }
+   document.getElementById('myform').addEventListener('submit', validate, false);
+        
+  
+</script>
+</body>
+</html>
