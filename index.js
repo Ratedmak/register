@@ -11,9 +11,9 @@ var email=null;
 const db = new pg.Client({
     user:"postgres",
     host:"localhost",
-    database:"users",
-    password:"7864842",
-    port:5432
+    database:"",
+    password:"",
+    port:
 });
 
 
